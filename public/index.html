@@ -24,12 +24,15 @@
 
 
     <div style="background: purple;" data-role="page">
-
-
       <div data-role="main" class="ui-content" style="background: purple; margin: 20%">
-        <div ng-controller="ideaController as ctrl">
-          <form><input style="background: #d9b3ff;" placeholder="share your idea..." type="text" name="text-1" id="text-1" value=""></form>
-          <button style="background: #b366ff; color: white;" class="ui-btn ui-btn-icon-left ui-btn-b">ideabox</button>
+
+
+        <div ng-controller="ideaController as ideaObject">
+
+          <input type="text" ng-model="ideaObject.phonenumber" ng-blur="ideaObject.getIdea()" style="background: #d9b3ff;" placeholder="enter twillio phonenumber..."/>
+          <input type="text" ng-model="ideaObject.ideaText" size="30" style="background: #d9b3ff;" placeholder="enter your idea..."/>
+          <button style="background: #b366ff; color: white;" class="ui-btn ui-btn-icon-left ui-btn-b" ng-click="ideaObject.addIdea()">ideabox</button>
+          <!--<input class="btn-primary" type="button" ng-click="ideaObject.addIdea()" value="ideabox">-->
         </div>
       </div>
 
